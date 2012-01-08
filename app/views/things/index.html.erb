@@ -1,0 +1,33 @@
+<h1>Listing things</h1>
+
+<table>
+  <tr>
+    <th>Type</th>
+    <th>Parent</th>
+	<th>Data</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @things.each do |thing| %>
+  <tr>
+    <td><%= thing.type.name %></td>
+	<td><%= thing.parent_id %></td>
+	<td>
+		<% thing.data.each do |data| %>
+		<%= data.metadata[0].name %>: <%= data.item %>
+		<% end %>
+	</td>
+    <td><%= thing.user_id %></td>
+    <td><%= link_to 'Show', thing %></td>
+    <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
+    <td><%= link_to 'Destroy', thing, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Thing', new_thing_path %>

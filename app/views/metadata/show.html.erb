@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @metadatum.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @metadatum.description %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @metadatum.parent_id %>
+</p>
+
+<p>
+  <b>Data type:</b>
+  <%= @metadatum.data_type_id %>
+</p>
+
+<p>
+  <b>Default values:</b>
+  <%= @metadatum.default_values_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_metadatum_path(@metadatum) %> |
+<%= link_to 'Back', metadata_path %>

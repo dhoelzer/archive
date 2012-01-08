@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @thing.type.name %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @thing.parent_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @thing.user_id %>
+</p>
+
+<p>
+	<% @thing.data.each do |data| %>
+	<%= data.metadata[0].name %>: <%= data.item %>
+	<br />
+	<% end %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_thing_path(@thing) %> |
+<%= link_to 'Back', things_path %>

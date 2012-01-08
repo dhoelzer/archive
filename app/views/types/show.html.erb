@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @type.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @type.description %>
+</p>
+
+<p>
+  <b>Parent:</b>
+  <%= @type.parent_id %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @type.user_id %>
+</p>
+	<% @type.metadata.each do |metadata| %>
+	<p>
+	Metadata: <%= metadata.name %>
+	</p>
+	<% end %>
+
+<%= link_to 'Edit', edit_type_path(@type) %> |
+<%= link_to 'Back', types_path %>

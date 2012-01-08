@@ -1,0 +1,31 @@
+<h1>Listing metadata</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Parent</th>
+    <th>Data type</th>
+    <th>Default values</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @metadata.each do |metadatum| %>
+  <tr>
+    <td><%= metadatum.name %></td>
+    <td><%= metadatum.description %></td>
+    <td><%= metadatum.parent_id %></td>
+    <td><%= metadatum.data_type_id %></td>
+    <td><%= metadatum.default_values_id %></td>
+    <td><%= link_to 'Show', metadatum %></td>
+    <td><%= link_to 'Edit', edit_metadatum_path(metadatum) %></td>
+    <td><%= link_to 'Destroy', metadatum, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Metadatum', new_metadatum_path %>
